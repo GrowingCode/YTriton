@@ -71,6 +71,12 @@ namespace triton {
         //! Constructor.
         TRITON_EXPORT MemoryAccess();
 
+        TRITON_EXPORT ~MemoryAccess() {
+          if (leaAst.use_count() == 0) {
+            leaAst.reset();
+          }
+        }
+
         //! Constructor.
         TRITON_EXPORT MemoryAccess(triton::uint64 address, triton::uint32 size /* bytes */);
 
