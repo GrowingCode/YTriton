@@ -6,4 +6,7 @@ cmake .. -DZ3_INCLUDE_DIRS="D:/GitDownloadLibrary/z3-4.13.0-x64-win/include" -DZ
 cmake --build . --config Release
 cmake --install . --config Release
 
+cmake --build . --config Debug
+cmake --install . --config Debug
+
 
