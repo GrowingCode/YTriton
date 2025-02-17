@@ -242,7 +242,7 @@ if(PYTHON_BINDINGS_AUTOCOMPLETE)
 endif()
 
 add_subdirectory(src)
-add_subdirectory(doc)
+#add_subdirectory(doc)
 
 
 
