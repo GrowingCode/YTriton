@@ -11,3 +11,9 @@ cmake --build . --config Debug
 cmake --install . --config Debug
 
 
+#gc cmake env
+cmake .. -DZ3_INCLUDE_DIRS="D:/AProjects/ExternalLib/z3/z3-4.13.0-x64-win/z3-4.13.0-x64-win/include" -DZ3_LIBRARIES="D:/AProjects/ExternalLib/z3/z3-4.13.0-x64-win/z3-4.13.0-x64-win/bin/libz3.lib" -DCAPSTONE_INCLUDE_DIRS="D:/AProjects/ExternalLib/capstone/capstone-5.0.1/capstone-5.0.1/include" -DCAPSTONE_LIBRARIES="D:/AProjects/ExternalLib/capstone/capstone-5.0.1/capstone-5.0.1/build/Release/capstone.lib" -DSELECT_VERSION="Debug" 
+
+cmake .. -DZ3_INCLUDE_DIRS="D:/AProjects/ExternalLib/z3/z3-4.13.0-x64-win/z3-4.13.0-x64-win/include" -DZ3_LIBRARIES="D:/AProjects/ExternalLib/z3/z3-4.13.0-x64-win/z3-4.13.0-x64-win/bin/libz3.lib" -DCAPSTONE_INCLUDE_DIRS="D:/AProjects/ExternalLib/capstone/capstone-5.0.1/capstone-5.0.1/include" -DCAPSTONE_LIBRARIES="D:/AProjects/ExternalLib/capstone/capstone-5.0.1/capstone-5.0.1/build/Release/capstone.lib" -DSELECT_VERSION="Release"
+
+-DCMAKE_INSTALL_PREFIX=D:/AProjects/BinaryCodeAnalysis/YTriton/app-install/Debug -DCMAKE_FORCE_REMOVE=ON
