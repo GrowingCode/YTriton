@@ -1,0 +1,6 @@
+#use only when .gitignore is changed
+git rm -r --cached .
+
+git add .
+git commit -m "small change."
+git push
