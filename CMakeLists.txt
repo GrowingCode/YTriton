@@ -11,7 +11,12 @@ set(PYTHON_EXECUTABLE "C:/Users/86187/AppData/Local/Programs/Python/Python310/py
 
 set(TRITON_ROOT "${CMAKE_CURRENT_LIST_DIR}")
 
-#message("user home:$ENV{HOME}")
+#message("CMAKE_BINARY_DIR:${CMAKE_BINARY_DIR}")
+
+set(Z3_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/../z3/include" CACHE STRING "Z3_INCLUDE_DIRS")
+set(Z3_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/../z3/bin/libz3.lib" CACHE STRING "Z3_LIBRARIES")
+set(CAPSTONE_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/../capstone/include" CACHE STRING "CAPSTONE_INCLUDE_DIRS")
+set(CAPSTONE_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/../capstone/build/Release/capstone.lib" CACHE STRING "CAPSTONE_LIBRARIES")
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/app-install/${SELECT_VERSION}" CACHE STRING "CMAKE_INSTALL_PREFIX")
 set(SELECT_VERSION "Debug" CACHE STRING "SELECT_VERSION")
@@ -21,6 +26,9 @@ if(EXISTS "${CMAKE_INSTALL_PREFIX}")
 else()
    file(MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX})
 endif()
+
+set(CMAKE_BUILD_TYPE "${SELECT_VERSION}")
+set(CMAKE_CONFIGURATION_TYPES "${SELECT_VERSION}")
 
 set(CMAKE_FORCE_REMOVE ON)
 
@@ -47,8 +55,8 @@ option(BOOST_INTERFACE                   "Use Boost as multiprecision library"  
 option(PYTHON_BINDINGS_AUTOCOMPLETE      "Generate an autocomplete stub file"              OFF)
 
 # Define cmake dependent options
-cmake_dependent_option(BUILD_EXAMPLES   "Build the examples"            ON  BUILD_SHARED_LIBS OFF)
-cmake_dependent_option(ENABLE_TEST      "Do testing"                    ON  BUILD_SHARED_LIBS OFF)
+cmake_dependent_option(BUILD_EXAMPLES   "Build the examples"            OFF  BUILD_SHARED_LIBS OFF)
+cmake_dependent_option(ENABLE_TEST      "Do testing"                    OFF  BUILD_SHARED_LIBS OFF)
 cmake_dependent_option(PYTHON_BINDINGS  "Enable Python bindings"        OFF  BUILD_SHARED_LIBS OFF)
 
 #Enable ctest
@@ -245,3 +253,6 @@ endif()
 
 add_subdirectory(src)
 #add_subdirectory(doc)
+
+#execute_process(COMMAND "cmake" "--build" "." "--target" "install" 
+#	WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
