@@ -56,11 +56,11 @@ if(_IMPORT_PREFIX STREQUAL "/")
 endif()
 
 # Create imported target triton::triton
-add_library(triton::triton SHARED IMPORTED)
+add_library(triton::triton STATIC IMPORTED)
 
 set_target_properties(triton::triton PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "C:/src/vcpkg/packages/z3_x64-windows/lib/libz3.lib;D:/triton/capstone-5.0.1/build/Release/capstone.lib"
+  INTERFACE_LINK_LIBRARIES "D:/GitDownloadLibrary/z3-4.13.0-x64-win/bin/libz3.lib;D:/GitDownloadLibrary/capstone-5.0.1/build/Release/capstone.lib"
 )
 
 # Load information for each installed configuration.

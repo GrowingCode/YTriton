@@ -13,14 +13,14 @@ set(TRITON_ROOT "${CMAKE_CURRENT_LIST_DIR}")
 
 #message("user home:$ENV{HOME}")
 
-set(CMAKE_FORCE_REMOVE ON)
-
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/app-install")
 if(EXISTS "${CMAKE_INSTALL_PREFIX}")
   message("CMAKE_INSTALL_PREFIX:" "${CMAKE_INSTALL_PREFIX}")
 else()
    file(MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX})
 endif()
+
+set(CMAKE_FORCE_REMOVE ON)
 
 # Read the build version
 file(READ ${TRITON_ROOT}/.build_number BUILD_NUMBER)
@@ -36,7 +36,7 @@ include(CMakeDependentOption)
 
 option(ASAN                              "Enable the ASAN linking"                         OFF)
 option(BITWUZLA_INTERFACE                "Use Bitwuzla as SMT solver"                      OFF)
-option(BUILD_SHARED_LIBS                 "Build a shared library"                          ON)
+option(BUILD_SHARED_LIBS                 "Build a shared library"                          OFF)
 option(GCOV                              "Enable code coverage"                            OFF)
 option(LLVM_INTERFACE                    "Use LLVM for lifting"                            OFF)
 option(MSVC_STATIC                       "Use statically-linked runtime library"           OFF)

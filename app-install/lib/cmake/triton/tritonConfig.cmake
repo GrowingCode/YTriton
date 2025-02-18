@@ -9,14 +9,14 @@ get_filename_component(PACKAGE_PREFIX_DIR "${CMAKE_CURRENT_LIST_DIR}/../../../" 
 
 include("${CMAKE_CURRENT_LIST_DIR}/tritonTargets.cmake")
 
-set(TRITON_ARCHIVE              "D:/taint/YTriton/app-install/lib/triton.lib")
+set(TRITON_ARCHIVE              "D:/HomeSpace/CTaintAnalysis/YTriton/app-install/lib/triton.lib")
 set(TRITON_BITWUZLA_INTERFACE   OFF)
 set(TRITON_BOOST_INTERFACE      OFF)
-set(TRITON_BUILD_SHARED_LIBS    ON)
-set(TRITON_INCLUDE_DIRS         "D:/taint/YTriton/app-install/include")
-set(TRITON_INSTALL_PREFIX       D:/taint/YTriton/app-install)
+set(TRITON_BUILD_SHARED_LIBS    OFF)
+set(TRITON_INCLUDE_DIRS         "D:/HomeSpace/CTaintAnalysis/YTriton/app-install/include")
+set(TRITON_INSTALL_PREFIX       D:/HomeSpace/CTaintAnalysis/YTriton/app-install)
 set(TRITON_LIBRARIES            "triton;;;;;")
-set(TRITON_LIBRARY              "D:/taint/YTriton/app-install/lib/triton.dll")
+set(TRITON_LIBRARY              "D:/HomeSpace/CTaintAnalysis/YTriton/app-install/lib/triton.dll")
 set(TRITON_LLVM_INTERFACE       OFF)
 set(TRITON_MSVC_STATIC          OFF)
 set(TRITON_PYTHON_BINDINGS      OFF)
@@ -33,11 +33,11 @@ if (TRITON_BOOST_INTERFACE)
 endif()
 
 # Triton include
-include_directories("D:/taint/YTriton/app-install/include")
-link_directories(BEFORE "D:/taint/YTriton/app-install/lib")
+include_directories("D:/HomeSpace/CTaintAnalysis/YTriton/app-install/include")
+link_directories(BEFORE "D:/HomeSpace/CTaintAnalysis/YTriton/app-install/lib")
 
 # Capstone include
-include_directories("D:/triton/capstone-5.0.1/include")
+include_directories("D:/GitDownloadLibrary/capstone-5.0.1/include")
 link_directories(BEFORE "")
 
 # Python include directories
@@ -54,7 +54,7 @@ endif()
 
 # Z3 include directories
 if (TRITON_Z3_INTERFACE)
-    include_directories("C:/src/vcpkg/packages/z3_x64-windows/include")
+    include_directories("D:/GitDownloadLibrary/z3-4.13.0-x64-win/include")
     link_directories(BEFORE "")
 endif()
 
