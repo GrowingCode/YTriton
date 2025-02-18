@@ -1,5 +1,6 @@
 cmake .. -G "Visual Studio 17 2022" -DBOOST_ROOT="D:/boost-boost-1.85.0" -DPYTHON_INCLUDE_DIRS="C:/Users/wang/AppData/Local/Programs/Python/Python36/include" -DPYTHON_LIBRARIES="C:/Users/wang/AppData/Local/Programs/Python/Python36/libs/python36.lib" -DZ3_INCLUDE_DIRS="D:/z3-4.13.0-x64-win/include" -DZ3_LIBRARIES="D:/z3-4.13.0-x64-win/bin/libz3.lib" -DCAPSTONE_INCLUDE_DIRS="D:/capstone-5.0.1/include" -DCAPSTONE_LIBRARIES="D:/capstone-5.0.1/build/Release/capstone.lib"
 
+#yyx cmake env
 cmake .. -DZ3_INCLUDE_DIRS="D:/GitDownloadLibrary/z3-4.13.0-x64-win/include" -DZ3_LIBRARIES="D:/GitDownloadLibrary/z3-4.13.0-x64-win/bin/libz3.lib" -DCAPSTONE_INCLUDE_DIRS="D:/GitDownloadLibrary/capstone-5.0.1/include" -DCAPSTONE_LIBRARIES="D:/GitDownloadLibrary/capstone-5.0.1/build/Release/capstone.lib"
 
 
