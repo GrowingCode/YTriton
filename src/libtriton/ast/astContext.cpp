@@ -609,7 +609,7 @@ namespace triton {
 
       SharedAbstractNode node = std::make_shared<BvsubNode>(expr1, expr2);
       std::string nodeStr = triton::utils::toString(node);
-      std::cout << "AstContext::bvsub: " << nodeStr << std::endl;
+      //std::cout << "AstContext::bvsub: " << nodeStr << std::endl;
 
       if (node == nullptr)
         throw triton::exceptions::Ast("AstContext::bvsub(): Not enough memory.");
@@ -641,7 +641,7 @@ namespace triton {
 
       SharedAbstractNode node = std::make_shared<FpsubNode>(expr1, expr2);
       std::string nodeStr = triton::utils::toString(node);
-      std::cout << "AstContext::fpsub: " << nodeStr << std::endl;
+      //std::cout << "AstContext::fpsub: " << nodeStr << std::endl;
 
       if (node == nullptr)
         throw triton::exceptions::Ast("AstContext::fpsub(): Not enough memory.");
@@ -899,7 +899,7 @@ namespace triton {
 
       SharedAbstractNode node = std::make_shared<FpisZeroNode>(expr);
       std::string nodeStr = triton::utils::toString(node);
-      std::cout << "AstContext::fpisZero: " << nodeStr << std::endl;
+      //std::cout << "AstContext::fpisZero: " << nodeStr << std::endl;
       if (node == nullptr)
         throw triton::exceptions::Ast("AstContext::fpisZero(): Not enough memory.");
       node->init();
@@ -912,7 +912,7 @@ namespace triton {
 
       SharedAbstractNode node = std::make_shared<FpisPositiveNode>(expr);
       std::string nodeStr = triton::utils::toString(node);
-      std::cout << "AstContext::fpisPositive: " << nodeStr << std::endl;
+      //std::cout << "AstContext::fpisPositive: " << nodeStr << std::endl;
       if (node == nullptr)
         throw triton::exceptions::Ast("AstContext::fpisPositive(): Not enough memory.");
       node->init();
@@ -936,7 +936,7 @@ namespace triton {
     SharedAbstractNode AstContext::integer(const triton::uint512& value) {
       SharedAbstractNode node = std::make_shared<IntegerNode>(value, this->shared_from_this());
       std::string nodeStr = triton::utils::toString(node);
-      std::cout << "AstContext::integer(): " << nodeStr << std::endl;
+      //std::cout << "AstContext::integer(): " << nodeStr << std::endl;
       if (node == nullptr)
         throw triton::exceptions::Ast("AstContext::integer(): Not enough memory.");
       node->init();
@@ -955,7 +955,7 @@ namespace triton {
 
       SharedAbstractNode node = std::make_shared<IteNode>(ifExpr, thenExpr, elseExpr);
       std::string nodeStr = triton::utils::toString(node);
-      std::cout << "AstContext::ite(): " << nodeStr << std::endl;
+      //std::cout << "AstContext::ite(): " << nodeStr << std::endl;
       if (node == nullptr)
         throw triton::exceptions::Ast("AstContext::ite(): Not enough memory.");
       node->init();

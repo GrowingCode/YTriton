@@ -411,11 +411,11 @@ namespace triton {
         triton::usize id = this->getUniqueSymExprId();
 
         std::string nodeStr = triton::utils::toString(node);
-        std::cout << "nodeStr: " << nodeStr << std::endl;
+   /*     std::cout << "nodeStr: " << nodeStr << std::endl;*/
         /* Performes transformation if there are rules recorded */
         const triton::ast::SharedAbstractNode& snode = this->simplify(node);
         std::string snodeStr = triton::utils::toString(snode);
-        std::cout << "sondeStr: " << snodeStr << std::endl;
+        //std::cout << "sondeStr: " << snodeStr << std::endl;
 
         
         /* Allocates the new shared symbolic expression */
@@ -423,11 +423,11 @@ namespace triton {
         if (comment == "COMISS operation")
           expr->fp32 = true;
         std::string exprStr = triton::utils::toString(expr);
-        std::cout << "exprStr: " << exprStr << std::endl;
+        //std::cout << "exprStr: " << exprStr << std::endl;
         std::string exprAstStr = triton::utils::toString(expr->getAst());
-        std::cout << "exprAstStr: " << exprAstStr << std::endl;
+        //std::cout << "exprAstStr: " << exprAstStr << std::endl;
         std::string exprAstUnrollStr = triton::utils::toString(unroll(expr->getAst()));
-        std::cout << "exprAstUnrollStr: " << exprAstUnrollStr << std::endl;
+        //std::cout << "exprAstUnrollStr: " << exprAstUnrollStr << std::endl;
 
         if (expr == nullptr) {
           throw triton::exceptions::SymbolicEngine("SymbolicEngine::newSymbolicExpression(): not enough memory");
@@ -639,7 +639,7 @@ namespace triton {
           }
         }
         std::string symVarStr = triton::utils::toString(symVar);
-        std::cout << "symVarStr: " << symVarStr << std::endl;
+     /*   std::cout << "symVarStr: " << symVarStr << std::endl;*/
         return symVar; 
       }
 
@@ -953,7 +953,7 @@ namespace triton {
         else        node = this->astCtxt->bv(value, bvSize);
 
         std::string nodeStr = triton::utils::toString(node);
-        std::cout << "nodeStr: " << nodeStr << std::endl;
+ /*       std::cout << "nodeStr: " << nodeStr << std::endl;*/
 
 
         /* extend AST if it's a extend operand (mainly used for AArch64) */
@@ -989,7 +989,7 @@ namespace triton {
         else        node = this->astCtxt->bv(value, bvSize);
 
         std::string nodeStr = triton::utils::toString(node);
-        std::cout << "getFp32Ast nodeStr: " << nodeStr << std::endl;
+        //std::cout << "getFp32Ast nodeStr: " << nodeStr << std::endl;
 
         return node;
       }
@@ -1008,7 +1008,7 @@ namespace triton {
         else        node = this->astCtxt->bv(value, bvSize);
 
         std::string nodeStr = triton::utils::toString(node);
-        std::cout << "getFp64Ast nodeStr: " << nodeStr << std::endl;
+        //std::cout << "getFp64Ast nodeStr: " << nodeStr << std::endl;
 
         return node;
       }

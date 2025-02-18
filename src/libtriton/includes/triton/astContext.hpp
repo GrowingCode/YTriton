@@ -222,9 +222,9 @@ namespace triton {
           /* Allocate node */
           SharedAbstractNode node = std::make_shared<ConcatNode>(exprs, this->shared_from_this());
           std::string NodeStr = triton::utils::toString(this->shared_from_this());
-          std::cout << "NodeStr: " << NodeStr << std::endl;
+  /*        std::cout << "NodeStr: " << NodeStr << std::endl;*/
           std::string ConcatNodeStr = triton::utils::toString(node);
-          std::cout << "ConcatNodeStr: " << ConcatNodeStr << std::endl;
+          //std::cout << "ConcatNodeStr: " << ConcatNodeStr << std::endl;
 
           if (node == nullptr)
             throw triton::exceptions::Ast("Node builders - Not enough memory");

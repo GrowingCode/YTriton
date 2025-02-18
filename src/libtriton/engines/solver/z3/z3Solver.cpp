@@ -45,7 +45,7 @@ namespace triton {
         triton::ast::TritonToZ3 z3Ast{false};
 
         std::string onodeString = triton::utils::toString(onode);
-        std::cout << "onodeString: " << onodeString << std::endl;
+        //std::cout << "onodeString: " << onodeString << std::endl;
 
         try {
           if (onode == nullptr)
@@ -61,7 +61,7 @@ namespace triton {
           z3::expr      expr = z3Ast.convert(onode);
 
           std::string exprString = triton::utils::toString(expr);
-          std::cout << "exprString: " << exprString << std::endl;
+          //std::cout << "exprString: " << exprString << std::endl;
 
           z3::context&  ctx  = expr.ctx();
           z3::solver    solver(ctx);

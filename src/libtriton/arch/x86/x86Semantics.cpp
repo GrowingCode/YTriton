@@ -5279,15 +5279,15 @@ namespace triton {
         /* Create symbolic operands */
         auto op1 = this->symbolicEngine->getFp32Ast(dst.getConstRegister());
         std::string op1Str = triton::utils::toString(op1);
-        std::cout << "op1: " << op1Str << std::endl;
+        //std::cout << "op1: " << op1Str << std::endl;
         auto op2 = this->symbolicEngine->getFp32Ast(src.getConstRegister());
         std::string op2Str = triton::utils::toString(op2);
-        std::cout << "op2: " << op2Str << std::endl;
+        //std::cout << "op2: " << op2Str << std::endl;
   
         /* Create the semantics */
         auto node = this->astCtxt->fpsub(op1, op2);
         std::string nodeStr = triton::utils::toString(node);
-        std::cout << "comiss_s node: " << nodeStr << std::endl;
+        //std::cout << "comiss_s node: " << nodeStr << std::endl;
 
         /* Create symbolic expression */
         auto expr = this->symbolicEngine->createSymbolicVolatileExpression(inst, node, "COMISS operation");
@@ -5313,15 +5313,15 @@ namespace triton {
         /* Create symbolic operands */
         auto op1 = this->symbolicEngine->getFp64Ast(dst.getConstRegister());
         std::string op1Str = triton::utils::toString(op1);
-        std::cout << "op1: " << op1Str << std::endl;
+        //std::cout << "op1: " << op1Str << std::endl;
         auto op2 = this->symbolicEngine->getFp64Ast(src.getConstRegister());
         std::string op2Str = triton::utils::toString(op2);
-        std::cout << "op2: " << op2Str << std::endl;
+        //std::cout << "op2: " << op2Str << std::endl;
 
         /* Create the semantics */
         auto node = this->astCtxt->fpsub(op1, op2);
         std::string nodeStr = triton::utils::toString(node);
-        std::cout << "comisd_s node: " << nodeStr << std::endl;
+        //std::cout << "comisd_s node: " << nodeStr << std::endl;
 
         /* Create symbolic expression */
         auto expr = this->symbolicEngine->createSymbolicVolatileExpression(inst, node, "COMISD operation");
@@ -7677,19 +7677,19 @@ namespace triton {
         /* Create symbolic operands */
         auto op1 = this->symbolicEngine->getOperandAst(inst, cf);
         std::string op1Str = triton::utils::toString(op1);
-        std::cout << "op1Str: " << op1Str << std::endl;
+        //std::cout << "op1Str: " << op1Str << std::endl;
 
         auto op2 = this->symbolicEngine->getOperandAst(inst, zf);
         std::string op2Str = triton::utils::toString(op2);
-        std::cout << "op2Str: " << op2Str << std::endl;
+        //std::cout << "op2Str: " << op2Str << std::endl;
         
         auto op3 = this->symbolicEngine->getOperandAst(inst, srcImm1);
         std::string op3Str = triton::utils::toString(op3);
-        std::cout << "op3Str: " << op3Str << std::endl;
+        //std::cout << "op3Str: " << op3Str << std::endl;
         
         auto op4 = this->symbolicEngine->getOperandAst(inst, srcImm2);
         std::string op4Str = triton::utils::toString(op4);
-        std::cout << "op4Str: " << op4Str << std::endl;
+        //std::cout << "op4Str: " << op4Str << std::endl;
 
         /* Create the semantics */
         auto node = this->astCtxt->ite(this->astCtxt->equal(this->astCtxt->bvor(op1, op2), this->astCtxt->bvtrue()), op4, op3);
@@ -7963,7 +7963,7 @@ namespace triton {
         auto op1 = this->symbolicEngine->getOperandAst(inst, zf);
 
         std::string op1Str = triton::utils::toString(op1);
-        std::cout << "AstContext::op1: " << op1Str << std::endl;
+        //std::cout << "AstContext::op1: " << op1Str << std::endl;
 
         auto op2 = this->symbolicEngine->getOperandAst(inst, srcImm1);
         auto op3 = this->symbolicEngine->getOperandAst(inst, srcImm2);
@@ -8779,7 +8779,7 @@ namespace triton {
         /* Create the semantics */
         auto node = this->symbolicEngine->getOperandAst(inst, src);
         std::string nodeStr = triton::utils::toString(node);
-        std::cout << "node: " << nodeStr << std::endl;
+        //std::cout << "node: " << nodeStr << std::endl;
 
         /*
          * Special cases:
